@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invest — Atlas Neo</title>
+  <meta name="description" content="Grow your money with Atlas Neo savings — interactive calculator." />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%23f2b544' points='50,0 63,25 93,15 80,42 100,60 72,68 70,98 50,80 30,98 28,68 0,60 20,42 7,15 37,25'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="invest.html">Invest</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Open account <span class="arrow">→</span></a>
+      <button class="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </nav>
+
+  <header class="hero page-hero">
+    <canvas id="hero-canvas" class="webgl" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Savings &amp; investing</span>
+        <h1 class="split">Watch your money <span class="grad-text">make waves.</span></h1>
+        <p class="lead reveal" style="--d:.6s">Automated savings pockets, term deposits and diversified portfolios. Start from just 100 MAD.</p>
+        <div class="hero-actions reveal" style="--d:.8s"><a href="#calculator" class="btn btn-primary">Try the calculator <span class="arrow">↓</span></a></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="calculator">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Calculator</span>
+        <h2>See what you could <span class="grad-text">build.</span></h2>
+      </div>
+      <div class="calc">
+        <div class="card reveal">
+          <div class="field"><label for="c-start">Initial deposit <b id="v-start"></b></label><input id="c-start" type="range" min="0" max="200000" step="1000" value="20000" /></div>
+          <div class="field"><label for="c-monthly">Monthly contribution <b id="v-monthly"></b></label><input id="c-monthly" type="range" min="0" max="20000" step="100" value="1500" /></div>
+          <div class="field"><label for="c-years">Duration <b id="v-years"></b></label><input id="c-years" type="range" min="1" max="30" step="1" value="12" /></div>
+          <div class="field"><label for="c-rate">Annual return <b id="v-rate"></b></label><input id="c-rate" type="range" min="0" max="12" step="0.5" value="5" /></div>
+          <div class="grid grid-2" style="margin-top:30px">
+            <div class="result"><span class="tag" style="margin:0">Final balance</span><b id="r-total" class="grad-text"></b></div>
+            <div class="result"><span class="tag" style="margin:0;color:var(--teal)">Interest earned</span><b id="r-gain"></b></div>
+          </div>
+        </div>
+        <div class="card reveal" style="--d:.15s">
+          <h3>Growth over time</h3>
+          <div class="bars" id="bars"></div>
+          <div class="legend"><span>Contributions</span><span>Interest</span></div>
+          <p class="disclaimer-note">Illustrative only. Figures assume monthly compounding and a constant return. Not financial advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Savings pockets</span><span>✦</span><span>Term deposits</span><span>✦</span><span>Sukuk funds</span><span>✦</span><span>Global ETFs</span><span>✦</span><span>Round-ups</span><span>✦</span><span>Savings pockets</span><span>✦</span><span>Term deposits</span><span>✦</span><span>Sukuk funds</span><span>✦</span><span>Global ETFs</span><span>✦</span><span>Round-ups</span><span>✦</span></div></div>
+
+  <section>
+    <div class="container grid grid-3">
+      <article class="card reveal" style="--d:0s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></div><h3>Smart pockets</h3><p>Create goals like “Hajj 2028” or “New car” and automate deposits every payday.</p></article>
+      <article class="card reveal" style="--d:0.1s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Ethical options</h3><p>Choose participative and sukuk-based products aligned with your values.</p></article>
+      <article class="card reveal" style="--d:0.2s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><h3>Global markets</h3><p>Diversify into curated international portfolios with low fees.</p></article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+          <p style="margin-top:16px;max-width:320px">A concept digital bank rooted in Moroccan craft and built for a borderless generation.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="cards.html">Cards</a></li><li><a href="invest.html">Savings</a></li><li><a href="invest.html">Invest</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html">Careers</a></li><li><a href="contact.html">Press</a></li></ul></div>
+        <div><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Help center</a></li><li><a href="contact.html">Security</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Atlas Neo — portfolio concept by Your Name.</span>
+        <span>Fictional brand. Not a real bank and not affiliated with any financial institution.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script type="module" src="js/scenes/invest.js"></script>
+</body>
+</html>

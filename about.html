@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Atlas Neo</title>
+  <meta name="description" content="The story behind Atlas Neo, a concept bank from Casablanca." />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%23f2b544' points='50,0 63,25 93,15 80,42 100,60 72,68 70,98 50,80 30,98 28,68 0,60 20,42 7,15 37,25'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="invest.html">Invest</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Open account <span class="arrow">→</span></a>
+      <button class="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </nav>
+
+  <header class="hero page-hero">
+    <canvas id="hero-canvas" class="webgl" aria-hidden="true" style="cursor:grab"></canvas>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Our story</span>
+        <h1 class="split">From Casablanca <span class="grad-text">to the world.</span></h1>
+        <p class="lead reveal" style="--d:.6s">We believe banking should feel as timeless as a hand-cut zellige tile and as fast as the internet. Drag the globe to see where our customers send money every day.</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container split-layout" style="align-items:start">
+      <div class="section-head reveal" style="position:sticky;top:120px">
+        <span class="tag">Timeline</span>
+        <h2>A short history of <span class="grad-text">a bold idea.</span></h2>
+        <p>Every milestone is a step towards a financial system that is open, fair and beautifully simple.</p>
+      </div>
+      <div class="timeline">
+        <div class="step reveal"><small>2021</small><h3>The spark</h3><p>Three engineers in a Casablanca café sketch a bank that fits in your pocket.</p></div>
+        <div class="step reveal"><small>2022</small><h3>First 10,000 users</h3><p>Our beta launches with instant transfers and a single, very orange card.</p></div>
+        <div class="step reveal"><small>2023</small><h3>Going borderless</h3><p>Multi-currency accounts and zero FX fees bring Moroccans abroad closer to home.</p></div>
+        <div class="step reveal"><small>2024</small><h3>Savings &amp; invest</h3><p>Smart pockets and ethical investing products open up to everyone.</p></div>
+        <div class="step reveal"><small>2025</small><h3>2 million strong</h3><p>Customers in 40+ countries, with support in Darija, Amazigh, Arabic, French and English.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="container grid grid-4">
+      <div class="stat reveal"><b data-count="40" data-suffix="+">0</b><span>Countries</span></div>
+      <div class="stat reveal" style="--d:.1s"><b data-count="320">0</b><span>Team members</span></div>
+      <div class="stat reveal" style="--d:.2s"><b data-count="5">0</b><span>Languages</span></div>
+      <div class="stat reveal" style="--d:.3s"><b data-count="12" data-suffix="B">0</b><span>MAD moved yearly</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><span class="tag">Values</span><h2>What we <span class="grad-text">stand for.</span></h2></div>
+      <div class="grid grid-3">
+        <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Craft</h3><p>We sweat the details, like the artisans who inspire our design language.</p></article>
+        <article class="card reveal" style="--d:.1s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Trust</h3><p>Transparent pricing, clear language and security without compromise.</p></article>
+        <article class="card reveal" style="--d:.2s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 3a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg></div><h3>Community</h3><p>Built with our users, for our users, in every language they speak.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+          <p style="margin-top:16px;max-width:320px">A concept digital bank rooted in Moroccan craft and built for a borderless generation.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="cards.html">Cards</a></li><li><a href="invest.html">Savings</a></li><li><a href="invest.html">Invest</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html">Careers</a></li><li><a href="contact.html">Press</a></li></ul></div>
+        <div><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Help center</a></li><li><a href="contact.html">Security</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Atlas Neo — portfolio concept by Your Name.</span>
+        <span>Fictional brand. Not a real bank and not affiliated with any financial institution.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script type="module" src="js/scenes/about.js"></script>
+</body>
+</html>

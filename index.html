@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Atlas Neo</title>
+  <meta name="description" content="Atlas Neo — a 3D animated concept digital bank." />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%23f2b544' points='50,0 63,25 93,15 80,42 100,60 72,68 70,98 50,80 30,98 28,68 0,60 20,42 7,15 37,25'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="invest.html">Invest</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Open account <span class="arrow">→</span></a>
+      <button class="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-glow"></div>
+    <canvas id="hero-canvas" class="webgl" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Concept digital bank · Casablanca</span>
+        <h1 class="split">Banking, crafted <span class="grad-text">in three</span> dimensions.</h1>
+        <p class="lead reveal" style="--d:.6s">Atlas Neo blends Moroccan craftsmanship with next-gen fintech. Open an account in minutes, spend worldwide, and grow your savings in one fluid app.</p>
+        <div class="hero-actions reveal" style="--d:.8s">
+          <a href="cards.html" class="btn btn-primary">Explore cards <span class="arrow">→</span></a>
+          <a href="invest.html" class="btn btn-ghost">Grow your money</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </header>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Instant transfers</span><span>✦</span><span>Zero FX fees</span><span>✦</span><span>Metal cards</span><span>✦</span><span>Smart savings</span><span>✦</span><span>24/7 support</span><span>✦</span><span>Instant transfers</span><span>✦</span><span>Zero FX fees</span><span>✦</span><span>Metal cards</span><span>✦</span><span>Smart savings</span><span>✦</span><span>24/7 support</span><span>✦</span></div></div>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Why Atlas Neo</span>
+        <h2>Everything your money needs, <span class="grad-text">nothing it doesn't.</span></h2>
+        <p>Designed from the ground up for speed, clarity and security, wrapped in an interface you'll actually enjoy using.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card reveal" style="--d:0s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Instant everything</h3><p>Send money to any Moroccan bank in seconds, 24/7, with a tap or a QR code.</p></article>
+        <article class="card reveal" style="--d:0.1s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><h3>Borderless spending</h3><p>Pay in 150+ currencies at the real exchange rate. No hidden markups, ever.</p></article>
+        <article class="card reveal" style="--d:0.2s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Vault-grade security</h3><p>Biometric login, live card freezing and AI fraud monitoring on every transaction.</p></article>
+        <article class="card reveal" style="--d:0.3s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></div><h3>Smart savings</h3><p>Round-ups, goals and automated pockets that grow your money while you sleep.</p></article>
+        <article class="card reveal" style="--d:0.4s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Beautiful app</h3><p>A fluid, animated interface with insights that actually make sense.</p></article>
+        <article class="card reveal" style="--d:0.5s"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 3a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg></div><h3>Shared accounts</h3><p>Split bills, share pockets with family and manage allowances for kids.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="container grid grid-4">
+      <div class="stat reveal"><b data-count="2.4" data-suffix="M">0</b><span>Happy customers</span></div>
+      <div class="stat reveal" style="--d:.1s"><b data-count="150" data-suffix="+">0</b><span>Currencies supported</span></div>
+      <div class="stat reveal" style="--d:.2s"><b data-count="99.99" data-suffix="%">0</b><span>Platform uptime</span></div>
+      <div class="stat reveal" style="--d:.3s"><b data-count="4.9" data-suffix="★">0</b><span>App store rating</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container split-layout">
+      <div class="viz reveal"><canvas id="vault-canvas" aria-hidden="true"></canvas></div>
+      <div class="reveal" style="--d:.15s">
+        <span class="tag">Security</span>
+        <h2>Your money, inside a <span class="grad-text">digital vault.</span></h2>
+        <p class="lead">Multiple layers of protection work silently in the background so you can focus on living.</p>
+        <ul class="check-list">
+          <li>End-to-end encryption on every request</li>
+          <li>Freeze, unfreeze and set limits instantly</li>
+          <li>Real-time AI fraud detection</li>
+          <li>Virtual one-time cards for online shopping</li>
+        </ul>
+        <a href="about.html" class="btn btn-ghost">Learn how we protect you <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta reveal">
+        <span class="tag">Get started</span>
+        <h2>Open your account <span class="grad-text">in 5 minutes.</span></h2>
+        <p>No paperwork, no branch visit. Just your ID and a selfie.</p>
+        <a href="contact.html" class="btn btn-primary">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><i class="logo-mark"></i><span><b>ATLAS</b> neo</span></a>
+          <p style="margin-top:16px;max-width:320px">A concept digital bank rooted in Moroccan craft and built for a borderless generation.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="cards.html">Cards</a></li><li><a href="invest.html">Savings</a></li><li><a href="invest.html">Invest</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html">Careers</a></li><li><a href="contact.html">Press</a></li></ul></div>
+        <div><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Help center</a></li><li><a href="contact.html">Security</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Atlas Neo — portfolio concept by Your Name.</span>
+        <span>Fictional brand. Not a real bank and not affiliated with any financial institution.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script type="module" src="js/scenes/home.js"></script>
+</body>
+</html>
